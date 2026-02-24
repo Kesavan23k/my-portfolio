@@ -1,15 +1,15 @@
 import React from 'react';
-import { Box, Typography, Grid, Card, CardContent, CardActionArea } from '@mui/material';
+import { Box, Typography, Grid, Card, CardContent, CardActionArea, CardMedia } from '@mui/material';
 import { motion } from 'framer-motion';
 import { useTheme } from '@mui/material/styles';
 
 const projects = [
-    { id: 1, title: 'Hiker Mobile App Design', category: 'Mobile UI' },
-    { id: 2, title: 'Medislot Doctor Appointment', category: 'App Design' },
-    { id: 3, title: 'GreenLeaf Cleaning Services', category: 'Web & Mobile' },
-    { id: 4, title: 'EMC Bank', category: 'Web & Mobile' },
-    { id: 5, title: 'EMC Hostel Management', category: 'System Design' },
-    { id: 6, title: 'Woogency', category: 'Web Design' }
+    { id: 1, title: 'Hiker Mobile App Design', category: 'Mobile UI', image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&h=400&fit=crop' },
+    { id: 2, title: 'Medislot Doctor Appointment', category: 'App Design', image: 'https://images.unsplash.com/photo-1576091160355-24dbce57ca62?w=600&h=400&fit=crop' },
+    { id: 3, title: 'GreenLeaf Cleaning Services', category: 'Web & Mobile', image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=400&fit=crop' },
+    { id: 4, title: 'EMC Bank', category: 'Web & Mobile', image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop' },
+    { id: 5, title: 'EMC Hostel Management', category: 'System Design', image: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&h=400&fit=crop' },
+    { id: 6, title: 'Woogency', category: 'Web Design', image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop' }
 ];
 
 export const ExperienceProjectsSection: React.FC = () => {
@@ -95,21 +95,31 @@ export const ExperienceProjectsSection: React.FC = () => {
                                         }}
                                     >
                                         <CardActionArea className="glass-container" sx={{ height: '100%', p: 0, border: theme.glass.border }}>
-                                            <Box
-                                                sx={{
-                                                    height: 200,
-                                                    width: '100%',
-                                                    background: `linear-gradient(45deg, ${theme.palette.background.paper} 0%, ${theme.palette.primary.main}15 100%)`,
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    borderBottom: theme.glass.border
-                                                }}
-                                            >
-                                                <Typography variant="h1" sx={{ opacity: 0.1, fontWeight: 900 }}>
-                                                    {project.id.toString().padStart(2, '0')}
-                                                </Typography>
-                                            </Box>
+                                            {project.image ? (
+                                                <CardMedia
+                                                    component="img"
+                                                    height="200"
+                                                    image={project.image}
+                                                    alt={project.title}
+                                                    sx={{ filter: 'brightness(0.8)', transition: '0.3s', '&:hover': { filter: 'brightness(1)' } }}
+                                                />
+                                            ) : (
+                                                <Box
+                                                    sx={{
+                                                        height: 200,
+                                                        width: '100%',
+                                                        background: `linear-gradient(45deg, ${theme.palette.background.paper} 0%, ${theme.palette.primary.main}15 100%)`,
+                                                        display: 'flex',
+                                                        alignItems: 'center',
+                                                        justifyContent: 'center',
+                                                        borderBottom: theme.glass.border
+                                                    }}
+                                                >
+                                                    <Typography variant="h1" sx={{ opacity: 0.1, fontWeight: 900 }}>
+                                                        {project.id.toString().padStart(2, '0')}
+                                                    </Typography>
+                                                </Box>
+                                            )}
                                             <CardContent sx={{ p: 3 }}>
                                                 <Typography variant="caption" sx={{ color: theme.palette.primary.main, fontWeight: 600, textTransform: 'uppercase', letterSpacing: 1 }}>
                                                     {project.category}
