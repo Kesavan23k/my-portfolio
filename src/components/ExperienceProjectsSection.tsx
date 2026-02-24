@@ -5,7 +5,7 @@ import { useTheme } from '@mui/material/styles';
 
 const projects = [
     { id: 1, title: 'Hiker Mobile App Design', category: 'Mobile UI', image: 'https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&h=400&fit=crop' },
-    { id: 2, title: 'Medislot Doctor Appointment', category: 'App Design', image: 'https://images.unsplash.com/photo-1576091160355-24dbce57ca62?w=600&h=400&fit=crop' },
+    { id: 2, title: 'Medislot Doctor Appointment', category: 'App Design', image: 'https://images.unsplash.com/photo-1576091160550-2173ff9e5ee5?w=600&h=400&fit=crop' },
     { id: 3, title: 'GreenLeaf Cleaning Services', category: 'Web & Mobile', image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&h=400&fit=crop' },
     { id: 4, title: 'EMC Bank', category: 'Web & Mobile', image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop' },
     { id: 5, title: 'EMC Hostel Management', category: 'System Design', image: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&h=400&fit=crop' },
